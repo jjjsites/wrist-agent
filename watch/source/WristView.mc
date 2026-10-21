@@ -69,7 +69,7 @@ class WristView extends WatchUi.View {
         Face.draw(dc, w / 2, h / 2 - 4, (w * 0.62 / 20).toNumber(), mood, _frame, _blinkLeft > 0);
 
         dc.setColor(mood.equals("waiting") ? 0xFFB020 : 0xFF3B30, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(w / 2, (h * 0.72).toNumber(), Graphics.FONT_XTINY, moodText(mood), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(w / 2, (h * 0.79).toNumber(), Graphics.FONT_XTINY, moodText(mood), Graphics.TEXT_JUSTIFY_CENTER);
 
         var n = app.tail.size();
         if (n > 0) {
@@ -78,7 +78,7 @@ class WristView extends WatchUi.View {
                 line = line.substring(0, 24);
             }
             dc.setColor(0x8A8A8A, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(w / 2, (h * 0.82).toNumber(), Graphics.FONT_XTINY, line, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(w / 2, (h * 0.87).toNumber(), Graphics.FONT_XTINY, line, Graphics.TEXT_JUSTIFY_CENTER);
         }
     }
 
