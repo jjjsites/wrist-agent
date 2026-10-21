@@ -20,7 +20,9 @@ ARGS=(-jar "$SDK/bin/monkeybrains.jar" -d "$DEVICE" -o bin/WristAgent.prg -f mon
 if command -v java >/dev/null; then
   (cd "$HERE" && java "${ARGS[@]}")
 else
-  docker run --rm -v "$SDK:$SDK" -v "$HOME/.Garmin:$HOME/.Garmin:ro" -v "$KEY:$KEY:ro" \
-    -v "$HERE:/app" -e HOME="$HOME" -w /app maven:3.9-eclipse-temurin-21 java "${ARGS[@]}"
+  # Java finds the device files under user.home, not $HOME, so pass it. Run as
+  # you, so the files in bin/ are yours and not root's.
+  docker run --rm --user "$(id -u):$(id -g)" -v "$SDK:$SDK" -v "$HOME/.Garmin:$HOME/.Garmin:ro" -v "$KEY:$KEY:ro" \
+    -v "$HERE:/app" -e HOME="$HOME" -w /app maven:3.9-eclipse-temurin-21 java -Duser.home="$HOME" "${ARGS[@]}"
 fi
 ls -la "$HERE/bin/WristAgent.prg"
