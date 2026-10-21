@@ -1,0 +1,7 @@
+<settings>
+    <setting propertyKey="@Properties.serverUrl" title="@Strings.ServerTitle"><settingConfig type="alphaNumeric" /></setting>
+    <setting propertyKey="@Properties.watchKey" title="@Strings.KeyTitle"><settingConfig type="alphaNumeric" /></setting>
+    <setting propertyKey="@Properties.phrase1" title="@Strings.PhraseTitle"><settingConfig type="alphaNumeric" /></setting>
+    <setting propertyKey="@Properties.phrase2" title="@Strings.PhraseTitle"><settingConfig type="alphaNumeric" /></setting>
+    <setting propertyKey="@Properties.phrase3" title="@Strings.PhraseTitle"><settingConfig type="alphaNumeric" /></setting>
+</settings>

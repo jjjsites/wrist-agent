@@ -1,0 +1,7 @@
+<properties>
+    <property id="serverUrl" type="string">https://agent.example.com</property>
+    <property id="watchKey" type="string"></property>
+    <property id="phrase1" type="string">continue</property>
+    <property id="phrase2" type="string">give me a status update</property>
+    <property id="phrase3" type="string"></property>
+</properties>
