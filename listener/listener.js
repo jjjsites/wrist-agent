@@ -32,8 +32,9 @@ function mood(lines) {
   return 'idle';
 }
 
-// Screen lines worth showing on a watch: not dividers, not the status bar.
-const CHROME = /^[\s─━╌│┃|╭╮╰╯]*$|^\s*[⏵⏸]|\? for shortcuts|^\s*❯\s*(Try ".*")?\s*$/;
+// Screen lines worth showing on a watch: not dividers, not the status bar,
+// not the hints Claude Code pushes to the right edge.
+const CHROME = /^[\s─━╌│┃|╭╮╰╯]*$|^\s*[⏵⏸]|\? for shortcuts|^\s*❯\s*(Try ".*")?\s*$|^\s{20,}/;
 
 async function state() {
   const pane = await tmux(['capture-pane', '-p', '-t', TARGET]);
